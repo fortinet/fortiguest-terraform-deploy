@@ -29,7 +29,7 @@ variable "ftntproject" {
 
 variable "image" {
   type    = string
-  default = "projects/fortigcp-project-001/global/images/fortiguest-130-build0164-lic"
+  default = "projects/fortigcp-project-001/global/images/fortiguest-131-build0167-lic"
 }
 
 # GCP instance machine type
