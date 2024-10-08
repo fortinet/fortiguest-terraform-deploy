@@ -1,6 +1,6 @@
 ### GCP terraform
 terraform {
-  required_version = ">=0.12.0"
+  required_version = ">=1.0.0"
   required_providers {
     google      = ">=2.11.0"
     google-beta = ">=2.13"
@@ -30,11 +30,10 @@ resource "random_string" "random_name_post" {
 # Create data disk
 resource "google_compute_disk" "datadisk" {
   name = "data-disk-${random_string.random_name_post.result}"
-  size = 500
+  size = var.SecondaryDiskSize
   type = "pd-standard"
   zone = var.zone
 }
-
 
 ### VPC ###
 resource "google_compute_network" "vpc_network" {
