@@ -12,7 +12,7 @@ variable "size" {
 // To use custom image
 // by default is "true" if custom image used
 variable "custom" {
-  default = true
+  default = false
 }
 
 //  Custom image blob uri
@@ -71,7 +71,7 @@ variable "fortiguestoffer" {
 
 variable "fortiguestversion" {
   type    = string
-  default = "2.1.0"
+  default = "2.0.00205"
 }
 
 variable "adminusername" {
