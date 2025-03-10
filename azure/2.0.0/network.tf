@@ -51,7 +51,19 @@ resource "azurerm_network_security_group" "publicnetworknsg" {
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
-    destination_port_range     = "*"
+    destination_port_ranges    = ["443","22"]
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+
+  security_rule {
+    name                       = "UDP"
+    priority                   = 1002
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Udp"
+    source_port_range          = "*"
+    destination_port_ranges    = ["1812","1813"]
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
